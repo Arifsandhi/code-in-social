@@ -1,0 +1,27 @@
+334.Increasing Triplet subsequence /{Leetcode}
+
+class Solution {
+public:
+    bool increasingTriplet(vector<int>& nums) {
+       int n = nums.size();
+    if (n < 3) return false;
+    
+    int min_num = numeric_limits<int>::max();
+    int mid_num = numeric_limits<int>::max();
+    
+    for (int i = 0; i < n; ++i) {
+        if (nums[i] <= min_num) {
+            min_num = nums[i];
+        } else if (nums[i] <= mid_num) {
+            mid_num = nums[i];
+        } else {
+            return true;
+        }
+    }
+    
+    return false;
+
+
+        
+    }
+};
