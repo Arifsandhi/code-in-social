@@ -1,5 +1,5 @@
 605.can place flowers/{leetcode}
-
+// This is right approach to solve this problem
 class Solution {
 public:
     bool canPlaceFlowers(vector<int>& flowerbed, int n) {
@@ -37,4 +37,40 @@ public:
         }
         return x >= n;
     }
-};
+};// This is right approach to solve this problem.
+
+
+
+\\---------------------The below approach i apply first but on 123/129 test case it's comming with an error for [1,0,1,0,1] and this is not possible according to the condition given in the question .
+\\the code is /******************************************************************************
+
+Welcome to GDB Online.
+GDB online is an online compiler and debugger tool for C, C++, Python, Java, PHP, Ruby, Perl,
+C#, OCaml, VB, Swift, Pascal, Fortran, Haskell, Objective-C, Assembly, HTML, CSS, JS, SQLite, Prolog.
+Code, Compile, Run and Debug online from anywhere in world.
+
+*******************************************************************************/
+#include <iostream>
+#include <string>
+using namespace std;
+int main()
+{
+    int n=2;
+    int flowerbed[]={1,0,0,0,1};
+    int count = 0;
+        for (int i = 0; i < sizeof(flowerbed); i++) {
+
+            if (flowerbed[i]==0 && (i==0 || flowerbed[i-1]==0) && (i==sizeof(flowerbed) ||flowerbed[i+1]==0 ))
+            {
+                count++;
+                flowerbed[i]=1;
+                if(count>=n)
+                {
+                    cout<<"1";
+                }
+                
+                
+            }
+}
+}
+//in online GDB compiler...
